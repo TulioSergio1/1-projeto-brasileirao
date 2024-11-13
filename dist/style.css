@@ -43,7 +43,10 @@ body {
 
 .slide-container {
   margin: auto;
-  width: 600px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
 }
 
@@ -59,7 +62,7 @@ body {
   background: white;
   width: 300px;
   display: inline-block;
-  margin: auto;
+  margin: 10px;
   border-radius: 19px;
   position: relative;
   text-align: center;
@@ -76,13 +79,14 @@ body {
 }
 
 .clash-card__image--barbarian {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg");
+  background: url("https://images.unsplash.com/photo-1619252584172-a83a949b6efd?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhZGllbnRlJTIwYnJhbmNvfGVufDB8fDB8fHww");
 }
 .clash-card__image--barbarian img {
-  width: 400px;
-  position: absolute;
-  top: -65px;
-  left: -70px;
+  width: 350px;
+  height: 350px;
+  position: relative;
+  top: -30px;
+  left: -25px;
 }
 
 .clash-card__image--archer {
