@@ -65,29 +65,35 @@ body {
 .card {
   background: white;
   width: 400px;
-  display: inline-block;
+  display: flex; /* Alteração para flexbox */
+  flex-direction: column; /* Colocar os itens em coluna */
+  align-items: center; /* Centralizar os itens horizontalmente */
+  justify-content: center; /* Centralizar os itens verticalmente */
   margin: 10px;
   border-radius: 19px;
-  position: relative;
   text-align: center;
   box-shadow: -1px 15px 30px -12px black;
   z-index: 9999;
 }
 
-.clash-card__image {
-  position: relative;
-  height: 230px;
-  margin-bottom: 35px;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
+
+img{
+  width: 300px; 
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 14px 14px 0 0
+
 }
 
-.clash-card__image img {
-  width: 100%;
+.img-container {
+  display: flex; /* Alteração para flexbox */
+  align-items: center; /* Centralizar a imagem verticalmente */
+  justify-content: center; /* Centralizar a imagem horizontalmente */
+  width: 80%;
   height: 100%;
   object-fit: cover;
-  border-radius: 14px 14px 0 0;
 }
+
 
 .clash-card__unit-name {
   font-size: 26px;

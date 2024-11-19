@@ -34,10 +34,10 @@ $clubes = $clube_obj->get_clubes(); // chama o método get_clubes(), que retorna
       <!-- Loop para gerar cards dinamicamente -->
       <?php foreach ($clubes as $clube): ?>
         <div class="card">
-          <div class="clash-card__image">
-            <!-- Usa imagem padrão se não houver imagem no banco -->
-            <img src="<?= htmlspecialchars($clube['img'] ?? 'imagem_padrão.png'); ?>" alt="<?= htmlspecialchars($clube['nome']); ?>" />
-          </div>
+
+        <div class="img-container"> 
+          <img src="<?= htmlspecialchars($clube['img'] ?? 'imagem_padrão.png'); ?>" alt="<?= htmlspecialchars($clube['nome']); ?>" />
+        </div>
           <div class="clash-card__unit-name"><?= htmlspecialchars($clube['nome']); ?></div>
           <div class="clash-card__unit-description">
             Fundado em <?= htmlspecialchars($clube['ano_fundacao']); ?>
