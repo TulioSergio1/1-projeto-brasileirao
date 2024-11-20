@@ -10,7 +10,7 @@ body {
   background-size: cover;
   font: 14px/20px "Lato", Arial, sans-serif;
   color: #9E9E9E;
-  margin-top: 170px;
+  margin-top: 70px;
 }
 
 .navbar {
@@ -44,53 +44,41 @@ body {
   color: #FFD700;
 }
 
-.slide-container {
-  margin: auto;
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-}
+.slide-container { 
+  margin: auto; 
+  width: 80%; } 
+  
+.wrapper { 
+  display: flex; 
+  overflow: hidden;
+  padding-top: 40px; 
+  padding-bottom: 40px; 
+} 
 
-.wrapper {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.wrapper:focus {
-  outline: 0;
-}
-
-.card {
-  background: white;
-  width: 400px;
-  display: flex; /* Alteração para flexbox */
-  flex-direction: column; /* Colocar os itens em coluna */
-  align-items: center; /* Centralizar os itens horizontalmente */
-  justify-content: center; /* Centralizar os itens verticalmente */
-  margin: 10px;
-  border-radius: 19px;
-  text-align: center;
-  box-shadow: -1px 15px 30px -12px black;
-  z-index: 9999;
-}
-
-
-img{
+.card { 
+  background: white; 
   width: 300px; 
-  height: 100%; 
-  object-fit: cover; 
-  border-radius: 14px 14px 0 0
-
+  margin: 10px; 
+  border-radius: 15px; 
+  text-align: center; 
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.img-container {
-  display: flex; /* Alteração para flexbox */
-  align-items: center; /* Centralizar a imagem verticalmente */
-  justify-content: center; /* Centralizar a imagem horizontalmente */
-  width: 80%;
-  height: 100%;
+.img-container { 
+  width: 100%; 
+  height: 200px; 
+  border-top-left-radius: 15px; 
+  border-top-right-radius: 15px; 
+  overflow: hidden; 
+  display: flex; 
+  justify-content: center; /* Centraliza a imagem horizontalmente */ 
+  align-items: center; /* Centraliza a imagem verticalmente */ 
+} 
+
+.img-container img { 
+  padding: 10px;
+  width: auto; 
+  height: 100%; 
   object-fit: cover;
 }
 
@@ -144,6 +132,108 @@ img{
   content: " ";
   clear: both;
   height: 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+  color: #ff7300;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.player-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Contêiner para centralizar o box */
+.container-box {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.box-container-cadastro {
+  background: white;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+  padding: 20px; /* Adiciona espaçamento dentro da caixa */
+}
+
+.box-container-cadastro form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.box-container-cadastro .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.box-container-cadastro label {
+  width: 80px; /* Largura fixa para os labels */
+  text-align: left;
+  margin-left: 10px;
+}
+
+.box-container-cadastro input[type="text"],
+.box-container-cadastro input[type="number"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #EC9B3B; /* Cor do botão */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #D88A2C; /* Cor do botão ao passar o mouse */
 }
 
 @media (max-width: 768px) {

@@ -31,7 +31,7 @@ class Jogador
     public function get_jogadores(): array
     {
         // String da consulta para o BD
-        $sql = 'SELECT nome, idade, posicao, img, clube FROM jogadores';
+        $sql = 'SELECT nome, idade, posicao, clube FROM jogadores';
 
         // Consulta no BD
         $resultado = $this->mysql->query($sql);

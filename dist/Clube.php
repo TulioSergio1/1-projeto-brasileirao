@@ -34,7 +34,7 @@ class Clube
     public function get_clubes(): array
     {
         // String da consulta para o BD
-        $sql = 'SELECT nome, ano_fundacao, estado, estadio FROM clubes';
+        $sql = 'SELECT img, nome, ano_fundacao, estado, estadio FROM clubes';
 
         // Consulta no BD
         $resultado = $this->mysql->query($sql);
