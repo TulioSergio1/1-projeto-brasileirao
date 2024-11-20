@@ -47,6 +47,27 @@ CREATE TABLE IF NOT EXISTS `clubes` (
 INSERT INTO `clubes` (`nome`, `ano_fundacao`, `estadio`, `estado`) VALUES
 ('Flamengo', 1895, 'Maracanã', 'Rio de Janeiro');
 
+DROP TABLE IF EXISTS `jogadores`;
+CREATE TABLE IF NOT EXISTS `jogadores` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `nome` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `idade` INT(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `posicao` VARCHAR(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `img` LONGBLOB NOT NULL,
+    `clube` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `reg_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+--
+-- Inserção de dados
+--
+
+
+INSERT INTO `jogadores` (`nome`, `idade`, `posicao`, `clube`) VALUES 
+('Pedro', '27', 'ATA', 'Flamengo');
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

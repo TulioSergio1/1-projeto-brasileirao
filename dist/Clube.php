@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Classe para realizar operações com informações de atores.
+ * Classe para realizar operações com informações de clubes.
  */
-class clubes
+class Clube
 {
 
     private $mysql;
 
     /**
-     * Método responsável por criar um objeto do tipo Ator.
+     * Método responsável por criar um objeto do tipo Clube.
      * 
      * @param $mysql uma conexão ao BD.
      * 
-     * @return um objeto do tipo Ator.
+     * @return um objeto do tipo Clube.
      */
     public function __construct(mysqli $mysql)
     {
@@ -28,6 +28,9 @@ class clubes
      * 
      * @return array informações de clubes do BD.
      */
+
+
+
     public function get_clubes(): array
     {
         // String da consulta para o BD

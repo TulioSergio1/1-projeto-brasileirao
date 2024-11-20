@@ -1,13 +1,13 @@
 <?php
 require 'config.php'; // importa o arquivo config.php, que estabelece a conexão com o BD
-include 'clubes.php'; // importa o arquivo Clube.php
+include 'Clube.php'; // importa o arquivo Clube.php
 
 $clube_obj = new clubes($conn); // cria um objeto da classe Clube, que recebe uma conexão do BD
 $clubes = $clube_obj->get_clubes(); // chama o método get_clubes(), que retorna informações do BD
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Brasileirão Série A</title>
