@@ -12,7 +12,7 @@ $jogador_obj = new Jogador($conn); // cria um objeto da classe Jogador, que rece
 if (isset($_POST['excluir'])) {
     $nome = $_POST['nome'];
     $jogador_obj->remover_jogador($nome);
-    header("location:q1.php");
+    header("location:pag_jogadores.php");
 }
 
 $jogadores = $jogador_obj->get_jogadores(); // chama o método get_jogadores(), que retorna informações do BD
