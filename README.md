@@ -29,3 +29,5 @@ PHP: Lógica de backend e integração com o banco de dados.
 Banco de Dados: Armazenamento de informações sobre clubes, jogadores e estatísticas.
   
 Objetivo: Criar uma plataforma intuitiva e informativa que permita aos fãs do futebol brasileiro acompanhar de perto o desempenho de seus clubes e jogadores favoritos na Série A do Brasileirão.
+
+Equipe: Túlio Sérgio, Pedro Lucas e Wítor Souto.

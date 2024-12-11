@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `clubes` (
     `ano_fundacao` INT NOT NULL,
     `estadio` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
     `estado` VARCHAR(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `mascote` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
     `reg_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -44,14 +45,16 @@ CREATE TABLE IF NOT EXISTS `clubes` (
 -- Inserção de dados
 --
 
-INSERT INTO `clubes` (`img`, `nome`, `ano_fundacao`, `estadio`, `estado`) VALUES
-('https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Escudo_do_Galo.png/800px-Escudo_do_Galo.png', 'Atlético-MG', 1908, 'MRV', 'MG'),
-('https://w7.pngwing.com/pngs/823/162/png-transparent-clube-de-regatas-flamengo-de-volta-redonda-rj-hd-logo-thumbnail.png', 'Flamengo', 1895, 'Maracanã', 'RJ'),
-('https://w7.pngwing.com/pngs/979/1019/png-transparent-cr-vasco-da-gama-estadio-sao-januario-campeonato-brasileiro-serie-a-football-botafogo-de-futebol-e-regatas-football-emblem-logo-shield-thumbnail.png', 'Vasco', 1898, 'Januário', 'RJ'),
-('https://w7.pngwing.com/pngs/106/873/png-transparent-cruzeiro-esporte-clube-sada-cruzeiro-volei-sociedade-esportiva-palmeiras-campeonato-brasileiro-serie-a-copa-libertadores-shields-logo-association-volleyball-thumbnail.png', 'Cruzeiro', 1921, 'Mineirão', 'MG'),
-('https://w7.pngwing.com/pngs/55/510/png-transparent-sociedade-esportiva-palmeiras-campeonato-brasileiro-serie-a-sport-club-corinthians-paulista-copa-do-brasil-sub-17-football-sport-logo-sports-thumbnail.png', 'Palmeiras', 1914, 'Allianz', 'SP'),
-('https://w7.pngwing.com/pngs/751/87/png-transparent-botafogo-hd-logo-thumbnail.png', 'Botafogo', 1904, 'Engenhão', 'RJ');
-
+INSERT INTO `clubes` (`img`, `nome`, `ano_fundacao`, `estadio`, `estado`, `mascote`) VALUES
+('https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Clube_Atl%C3%A9tico_Mineiro_logo.svg/1810px-Clube_Atl%C3%A9tico_Mineiro_logo.svg.png', 'Atlético-MG', 1908, 'MRV', 'MG', 'Galo'),
+('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Flamengo_braz_logo.svg/800px-Flamengo_braz_logo.svg.png', 'Flamengo', 1895, 'Maracanã', 'RJ', 'Urubu'),
+('https://i.pinimg.com/originals/f0/ce/a6/f0cea66bb03481b1ce0df3d74ab82b99.png', 'Vasco', 1898, 'Januário', 'RJ', 'Almirante'),
+('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Cruzeiro_Esporte_Clube_%28logo%29.svg/2048px-Cruzeiro_Esporte_Clube_%28logo%29.svg.png', 'Cruzeiro', 1921, 'Mineirão', 'MG', 'Raposa'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRftzvajnhoNHvhzjPkCgx9HMTxPxkqOFy6QA&s', 'Palmeiras', 1914, 'Allianz', 'SP', 'Porco'),
+('https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Botafogo_de_Futebol_e_Regatas_logo.svg/1816px-Botafogo_de_Futebol_e_Regatas_logo.svg.png', 'Botafogo', 1904, 'Engenhão', 'RJ', 'Cachorro'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ75Pqpqqlot09RQ6Ekxu_IjIghusCSh_v7Bg&s', 'Fluminense', 1902, 'Maracanã', 'RJ', 'Guerreirinho'),
+('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Fortaleza_EC_2018.png/1200px-Fortaleza_EC_2018.png', 'Fortaleza', 1918, 'Castelão', 'CE', 'Leão'),
+('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/1200px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png', 'São Paulo', 1930, 'Morumbi', 'SP', 'Santo Paulo');
 
 
 DROP TABLE IF EXISTS `jogadores`;
@@ -81,7 +84,7 @@ INSERT INTO `jogadores` (`nome`, `idade`, `posicao`, `clube`) VALUES
 ('Memphis Depay', 30, 'Atacante', 'Corinthians'),
 ('Yannick Bolasie', 35, 'Atacante', 'Criciúma'),
 ('Matheus Pereira', 28, 'Meio-campista', 'Cruzeiro'),
-('Walter', 37, 'Atacante', 'Cuiabá'),
+('Walter', 37, 'Goleiro', 'Cuiabá'),
 ('Giorgian De Arrascaeta', 30, 'Meio-campista', 'Flamengo'),
 ('Thiago Silva', 40, 'Zagueiro', 'Fluminense'),
 ('Juan Lucero', 33, 'Atacante', 'Fortaleza'),

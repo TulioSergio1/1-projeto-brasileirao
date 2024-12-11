@@ -7,10 +7,16 @@ $clube_obj = new Clube($conn); // cria um objeto da classe Clube, que recebe uma
 $clubes = $clube_obj->get_clubes(); // chama o método get_clubes(), que retorna informações do BD
 
 $jogador_obj = new Jogador($conn); // cria um objeto da classe Jogador, que recebe uma conexão do BD
+
+// Excluir jogador
+if (isset($_POST['excluir'])) {
+    $nome = $_POST['nome'];
+    $jogador_obj->remover_jogador($nome);
+    header("location:q1.php");
+}
+
 $jogadores = $jogador_obj->get_jogadores(); // chama o método get_jogadores(), que retorna informações do BD
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -27,7 +33,7 @@ $jogadores = $jogador_obj->get_jogadores(); // chama o método get_jogadores(), 
     <div class="navbar">
         <div class="brand">Brasileirão Série A</div>
         <div>
-            <a href="pag_cadastro.php">Banco de dados</a>
+            <a href="pag_cadastro.php">Adicionar Jogador</a>
             <a href="pag_clubes.php">Clubes</a>
             <a href="pag_jogadores.php">Jogadores</a>
         </div>
@@ -41,6 +47,7 @@ $jogadores = $jogador_obj->get_jogadores(); // chama o método get_jogadores(), 
                     <th>Clube</th>
                     <th>Posição</th>
                     <th>Idade</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,11 +58,16 @@ $jogadores = $jogador_obj->get_jogadores(); // chama o método get_jogadores(), 
                         <td><?= htmlspecialchars($jogador['clube']); ?></td>
                         <td><?= htmlspecialchars($jogador['posicao']); ?></td>
                         <td><?= htmlspecialchars($jogador['idade']); ?></td>
+                        <td>
+                            <form method="post" action="">
+                                <input type="hidden" name="nome" value="<?= htmlspecialchars($jogador['nome']); ?>">
+                                <button type="submit" name="excluir">Excluir</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

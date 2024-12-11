@@ -20,7 +20,7 @@ $clubes = $clube_obj->get_clubes(); // Obtém informações dos clubes
   <div class="navbar">
     <div class="brand">Brasileirão Série A</div>
     <div>
-      <a href="pag_cadastro.php">Banco de dados</a>
+      <a href="pag_cadastro.php">Adicionar Jogador</a>
       <a href="pag_clubes.php">Clubes</a>
       <a href="pag_jogadores.php">Jogadores</a>
     </div>
@@ -38,12 +38,12 @@ $clubes = $clube_obj->get_clubes(); // Obtém informações dos clubes
           </div>
           <div class="clash-card__unit-name"><?= htmlspecialchars($clube['nome']); ?></div>
           <div class="clash-card__unit-description">
-            Fundado em <?= htmlspecialchars($clube['ano_fundacao']); ?>
+            O mascote do clube é o <?= htmlspecialchars($clube['mascote']); ?>
           </div>
           <div class="clash-card__unit-stats clearfix">
             <div class="one-third">
               <div class="stat"><?= htmlspecialchars($clube['ano_fundacao']); ?></div>
-              <div class="stat-value">Ano</div>
+              <div class="stat-value">Fundação</div>
             </div>
             <div class="one-third">
               <div class="stat"><?= htmlspecialchars($clube['estadio']); ?></div>
@@ -68,15 +68,12 @@ $clubes = $clube_obj->get_clubes(); // Obtém informações dos clubes
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 3,
-        arrows: true,
-        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-        nextArrow: '<button type="button" class="slick-next">Next</button>',
         responsive: [
           {
             breakpoint: 768,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 3,
+              slidesToScroll: 2,
               infinite: true,
               dots: true
             }
@@ -84,8 +81,8 @@ $clubes = $clube_obj->get_clubes(); // Obtém informações dos clubes
           {
             breakpoint: 480,
             settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3
+              slidesToShow: 1,
+              slidesToScroll: 1
             }
           }
         ]
