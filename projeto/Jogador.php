@@ -40,49 +40,52 @@ class Jogador
         return $jogadores;
     }
 
-    /**
-     * Método responsável por excluir um jogador do BD pelo nome.
-     * 
-     * @param string $nome Nome do jogador a ser excluído.
-     * 
-     * @return bool true em caso de sucesso, false em caso de falha.
-     */
-    public function remover_jogador(string $nome): void
+    public function get_jogador_id($id): array
     {
-        // código com prepare e bind, que evita SQL injection.
-        $sql = "DELETE FROM `jogadores` WHERE `nome` = ?";
-        $stmt = $this->mysql->prepare($sql);
-            
-        // configura parâmetros e executa a query
-        $stmt->bind_param("s", $nome);
-            
-        $stmt->execute();
-        $stmt->close();
-        $this->mysql->close();
+        // String da consulta para o BD
+        $sql = "SELECT * FROM `jogadores` WHERE id = $id";
+
+        // Consulta no BD
+        $resultado = $this->mysql->query($sql);
+
+        // Retorna um array associativo
+        $jogador = $resultado->fetch_array(MYSQLI_ASSOC);
+
+
+        return $jogador;
     }
 
     public function insere_jogador($nome, $idade, $clube, $posicao): bool
     {
-        // código com prepare e bind, que evita SQL injection.
-        $sql = "INSERT INTO jogadores (nome, idade, clube, posicao) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO jogadores (nome, idade, clube, posicao) VALUES
+        (?, ?, ?, ?)";
         $stmt = $this->mysql->prepare($sql);
-
-        // verifica se o prepare() foi bem-sucedido
-        if (!$stmt) {
-            return false;
-        }
 
         // configura parâmetros e executa a query
         $stmt->bind_param("siss", $nome, $idade, $clube, $posicao);
-        $status = $stmt->execute();
-
-        // verifique se o execute() foi bem-sucedido
-        if (!$status) {
-            return false;
-        }
-
+        $stmt->execute();
         $stmt->close();
         $this->mysql->close();
+
+        return true;
+    }
+
+    /**
+     * Método responsável por excluir um jogador do BD pelo id.
+     * 
+     * @param string $id id do jogador a ser excluído.
+     * 
+     * @return sem retorno.
+     */
+    public function remove_jogador($id) : bool {
+        $sql = "DELETE FROM `jogadores` WHERE `jogadores`.`id` = ?";
+        $stmt = $this->mysql->prepare($sql);
+            
+        // configura parâmetros e executa a query
+        $stmt->bind_param("i", $id);
+            
+        $stmt->execute();
+        $this->mysql->close();// código com prepare e bind, que evita SQL injection.
         return true;
     }
 
@@ -100,12 +103,29 @@ class Jogador
      */
     public function edita_jogador($id, $nome, $idade, $clube, $posicao): bool
     {
-        #### Implemente aqui o método de editar jogador  ####
-        #                                                #
-        #                                                #
-        #                                                #
-        ##################################################
+        // Cria a consulta preparada com parâmetros marcados como placeholders (?)
+        $sql = "UPDATE `jogadores` SET `nome` = ?, `idade` = ?, `clube` = ?, `posicao` = ? WHERE `jogadores`.`id` = ?";
 
+        // Prepara a consulta
+        $stmt = $this->mysql->prepare($sql);
+
+        // Verifica se o prepare() foi bem-sucedido
+        if (!$stmt) {
+            return false;
+        }
+
+        // Vincula os parâmetros aos placeholders na consulta preparada
+        $stmt->bind_param("sissi", $nome, $idade, $clube, $posicao, $id);
+
+        // Executa a consulta preparada
+        $status = $stmt->execute();
+
+        // Verifica se o execute() foi bem-sucedido
+        if (!$status) {
+            return false;
+        }
+
+        $stmt->close();
         return true;
     }
 }

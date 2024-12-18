@@ -13,6 +13,42 @@ body {
   margin-top: 70px;
 }
 
+table {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilo para o alert de sucesso */
+.alert-success {
+  background-color: #4CAF50; /* Cor verde para sucesso */
+  color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Estilo para o alert de erro */
+.alert-error {
+  background-color: #f44336; /* Cor vermelha para erro */
+  color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Adicionando algum espaçamento extra à página */
+.container {
+  padding: 20px;
+}
+
+
 .navbar {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
@@ -137,6 +173,8 @@ body {
 .container {
   width: 90%;
   margin: 0 auto;
+
+  background-color: #333;
 }
 
 h1 {
@@ -202,6 +240,12 @@ tr:nth-child(even) {
 }
 
 .box-container-cadastro .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.container .form-group-msg {
   display: flex;
   align-items: center;
   margin-bottom: 10px;

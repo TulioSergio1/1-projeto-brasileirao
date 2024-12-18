@@ -14,7 +14,7 @@ $clubes = $clube_obj->get_clubes(); // Obtém informações dos clubes
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="navbar">
